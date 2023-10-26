@@ -1,22 +1,11 @@
-mod first_module {
-    pub fn print_chars() {
-        for chr in 'a'..='z' {
-            println!("{}", chr);
-        }
-        for chr in 'A'..='Z' {
-            println!("{}", chr);
-        }
-    }
-}
+mod garden;
+mod first_module;
+use first_module::first_module::print_chars;
+use garden::second_module;
 
-mod second_module {
-    pub fn print_chars() {
-        for chr in 'A'..='z' {
-            println!("{}", chr);
-        }
-    }
-}
+
+//use garden::first_module;
 fn main() {
-    first_module::print_chars();
-    second_module::print_chars();
+    print_chars();
+    second_module::print_chars(); // 调用 second_module.rs 中的函数
 }
